@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 
-const db = require('./db'); // just to trigger connection
-const userRoutes = require('./routes/userRoutes');
+const db = require('./db');
+const userRoutes = require('./routes/routeUsers');
 
 app.use(express.json());
 
@@ -15,8 +15,6 @@ db.connect((err) => {
     console.error('MySQL connection error:', err.message);
     return;
   }
-
-  console.log('Connected to MySQL');
 
   app.listen(3000, () => {
     console.log('Server is running on http://localhost:3000');

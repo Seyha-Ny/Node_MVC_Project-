@@ -9,13 +9,4 @@ const db = mysql.createConnection({
   database: 'users'
 });
 
-// Connect function
-db.connect((err) => {
-  if (err) {
-    console.error('MySQL connection error:', err.message);
-    return;
-  }
-  console.log('Connected to MySQL');
-});
-
 module.exports = db;
