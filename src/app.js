@@ -1,8 +1,8 @@
-const express = require('express');
-const app = express();
+import express from 'express';
+import db from './db.js';
+import userRoutes from './routes/routeUsers.js';
 
-const db = require('./db');
-const userRoutes = require('./routes/routeUsers');
+const app = express();
 
 app.use(express.json());
 
