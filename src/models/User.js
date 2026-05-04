@@ -24,7 +24,7 @@ class User extends BaseModel {
 
   static async create({ name, age }) {
     const findIdSql = 'SELECT IFNULL(MAX(id), 0) + 1 AS nextId FROM `user information`';
-    const [[{ nextId }]] = await this.query(findIdSql);
+    const [{ nextId }] = await this.query(findIdSql);
     const insertId = await super.create(this.tableName, { id: nextId, name, age });
     return new User(nextId, name, age);
   }
